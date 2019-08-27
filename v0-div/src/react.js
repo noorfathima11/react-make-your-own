@@ -1,13 +1,14 @@
 (() => {
-  function anElement(element, children){
-    const anElement = document.createElement(element)
-    anElement.innerHTML = children.join(' ')
-    return anElement
+  function div(children){
+    const aDiv = document.createElement('div')
+    aDiv.innerHTML = children.join(' ')
+    return aDiv
   }
 
   function createElement(el, props, ...children){
-    return anElement(el, children)
+    return div(children)
   }
+
   console.log('loaded')
 
   window.React = {
@@ -20,5 +21,3 @@
     }
   }
 })()
-
-
