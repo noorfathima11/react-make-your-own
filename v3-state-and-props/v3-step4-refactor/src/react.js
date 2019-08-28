@@ -23,11 +23,12 @@
     console.log('children', children, 'props', props)
     const anElement = document.createElement(element)
     children.forEach(child => appendChild(anElement, child))
-    Object.keys(props).forEach(propName => appendProp(anElement, name, props[propName]))
+    _.forEach(props, (value, name) => appendProp(anElement, name, value))
     return anElement
   }
 
   function appendProp(element, propName, propValue){
+    console.log('appending prop', element, propName, propValue)
     if(shouldAddEventListener(propName)){
       element.addEventListener(
         propName.substring(2).toLowerCase(),
@@ -40,13 +41,14 @@
   }
 
   function appendChild(element, child){
+    console.log('element', element)
     if(typeof child === 'object'){
       console.log('child is an object')
       element.appendChild(child)
     }else {
       console.log('child is not an object')
       element.innerHTML += child
-      console.log('anElement', anElement)
+      console.log('anElement', element)
     }
 
   }

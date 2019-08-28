@@ -12,7 +12,6 @@ class MyButton extends React.Component{
   }
 }
 
-
 const myBtn = React.createElement(
   MyButton,
   {onClick: () => alert('yay it worked')},
