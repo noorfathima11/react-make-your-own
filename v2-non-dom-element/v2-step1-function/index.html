@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head...>
+<body>
+
+  <script src="./src/react.js"></script>
+  <div id="root"></div>
+  <script>
+    const Hello = function() {
+        return React.createElement('div', null, 'Hello World')
+    }
+
+    console.log('creating element')
+    const helloWorld = React.createElement(Hello, null, null)
+    ReactDOM.render(helloWorld, document.getElementById('root'))
+
+  </script>
+
+</body>
+</html>
